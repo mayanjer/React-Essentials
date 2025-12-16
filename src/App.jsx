@@ -1,3 +1,11 @@
+
+export function MainGoal() {
+  return (
+    <p>My main goal is to learn recat from the ground up</p>
+
+  )
+}
+
 function Header() {
   return (
     <header>
@@ -18,6 +26,7 @@ function App() {
       <main>
         <h2>Time to get started!</h2>
       </main>
+      <MainGoal/>
     </div>
   );
 }
