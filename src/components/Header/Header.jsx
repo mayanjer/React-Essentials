@@ -1,8 +1,10 @@
 
-import descriptionImage from "../assets/components.png";
+import "./Header.css"
+
+
 export default function Header() {
   return (
-    <header>
+    <header >
       <img src="src/assets/react-core-concepts.png" alt="Stylized atom" />
       <h1>React Essentials</h1>
       <p>
