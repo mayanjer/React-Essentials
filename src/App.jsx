@@ -1,10 +1,7 @@
 
-export function MainGoal() {
-  return (
-    <p>My main goal is to learn recat from the ground up</p>
+import descriptionImage from "./assets/components.png"
+import { CORE_CONCEPTS } from "./data";
 
-  )
-}
 
 function Header() {
   return (
@@ -19,14 +16,34 @@ function Header() {
   );
 }
 
+function CoreConcepts({image, title, description}) {
+  return <li>
+    <p><img src={ image} alt={title} /></p>
+    <h4>{title }</h4>
+    <p>{description}</p>
+
+
+  </li>
+}
+
 function App() {
   return (
     <div>
-      <Header/>
+      <Header />
       <main>
-        <h2>Time to get started!</h2>
+        <section id="core-concepts">
+          <ul>
+            <CoreConcepts
+              title="Components"
+              description="Used in scenarios of reusabilty"
+              image={descriptionImage}
+            />
+            <CoreConcepts {...CORE_CONCEPTS[1]} />
+            <CoreConcepts {...CORE_CONCEPTS[2]} />
+            <CoreConcepts {...CORE_CONCEPTS[3]} />
+          </ul>
+        </section>
       </main>
-      <MainGoal/>
     </div>
   );
 }
