@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { EXAMPLES } from '../data';
 import TabButton from '../components/TabButton'
 import Section from './Section';
+import Tabs from './Tabs';
 
 
 export default function Examples() {
@@ -22,33 +23,38 @@ export default function Examples() {
      );
     return (
       <Section title="" id="examples">
-        <menu>
-          <TabButton
-            isSelected={selectedTopic.title === "Components"}
-            onClick={(e) => handleSelect("components")}
-          >
-            Components
-          </TabButton>
-          <TabButton
-            isSelected={selectedTopic.title === "JSX"}
-            onClick={() => handleSelect("jsx")}
-          >
-            JSX
-          </TabButton>
-          <TabButton
-            isSelected={selectedTopic.title === "Props"}
-            onClick={() => handleSelect("props")}
-          >
-            Props
-          </TabButton>
-          <TabButton
-            isSelected={selectedTopic.title === "State"}
-            onClick={() => handleSelect("state")}
-          >
-            State
-          </TabButton>
-        </menu>
-        {selectedTopic ? topicContent : <p>Please Select a topic</p>}
+        <Tabs
+          buttons={
+            <>
+              <TabButton
+                isSelected={selectedTopic.title === "Components"}
+                onClick={(e) => handleSelect("components")}
+              >
+                Components
+              </TabButton>
+              <TabButton
+                isSelected={selectedTopic.title === "JSX"}
+                onClick={() => handleSelect("jsx")}
+              >
+                JSX
+              </TabButton>
+              <TabButton
+                isSelected={selectedTopic.title === "Props"}
+                onClick={() => handleSelect("props")}
+              >
+                Props
+              </TabButton>
+              <TabButton
+                isSelected={selectedTopic.title === "State"}
+                onClick={() => handleSelect("state")}
+              >
+                State
+              </TabButton>
+            </>
+          }
+        >
+          {selectedTopic ? topicContent : <p>Please Select a topic</p>}
+        </Tabs>
       </Section>
     );
 }
